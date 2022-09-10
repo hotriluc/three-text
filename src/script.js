@@ -55,14 +55,19 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
   for (let i = 0; i < 250; i++) {
     const scale = Math.random() * 0.5 + 0.3;
     const torusMesh = new THREE.Mesh(torusGeometry, material);
+
+    // Set random position for donuts
     torusMesh.position.set(
       (Math.random() - 0.5) * 15,
       (Math.random() - 0.5) * 15,
       (Math.random() - 0.5) * 15
     );
+
+    // Rotate donuts
     torusMesh.rotation.x = (Math.random() - 0.5) * 15;
     torusMesh.rotation.y = (Math.random() - 0.5) * 15;
 
+    // Change size of donuts
     torusMesh.scale.set(scale, scale, scale);
     scene.add(torusMesh);
   }
